@@ -1,0 +1,36 @@
+/* 一覧画面用 */
+
+//一覧画面のエラーメッセージ
+.flash {
+  color: red;
+  font-weight: bold;
+}
+
+//一覧画面のボタン領域
+.index_btn_area {
+  text-align: right;
+
+  .btn {
+    margin: 1em;
+  }
+}
+
+//一覧画面の年月表示領域
+.buy_month_area {
+  margin: 1em 1em 0.5em 0em;
+}
+
+//一覧画面の購入履歴表示領域
+.buy_item_table {
+  border: 1px #000 solid;
+  margin-bottom: 1.5em;
+}
+
+/* 新規画面用 */
+
+.new_btn_area {
+  text-align: right;
+  .btn {
+    margin: 1em;
+  }
+}

@@ -1,0 +1,26 @@
+= search_form_for(@q, url: log_view_buy_items_path) do |item|
+  = item.label :name_cont, '項目名'
+  = item.search_field :name_cont, class: 'form-control'
+  = item.submit "検索", class: 'btn btn-light'
+
+hr
+
+- unless @buy_items.nil?
+  .mb-5
+  table.table
+    thead.thead-default
+      tr
+        th カテゴリ
+        th 項目名
+        th 金額
+        th 作成日
+    tbody
+      - @buy_items.each do |item|
+        tr
+          td = Category.find(item.category_id).name ||= ""
+          td = item.name
+          td = item.price
+          td = item.created_at.strftime("%Y/%m")
+
+= link_to "一覧へ戻る", buy_items_path, class: 'btn btn-warning'
+

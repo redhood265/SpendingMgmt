@@ -1,0 +1,32 @@
+- if flash[:error]
+  .flash
+    = flash[:error]
+
+div.index_btn_area
+  = link_to "新規作成", new_buy_item_path, class: 'btn btn-primary btn-lg'
+  = link_to "ログ一覧", log_view_buy_items_path, class: 'btn btn-info btn-lg'
+  = link_to "チャート一覧", chart_view_buy_items_path, class: 'btn btn-secondary btn-lg'
+
+- @buy_items_hash.each_value do |item|
+  div.buy_month_area
+  - unless item.first.nil?
+    strong
+      = item.first.created_at.strftime("%Y/%m")
+
+  div.buy_item_table
+    table.table
+      thead.thead-default
+        tr
+          th カテゴリ
+          th 項目名
+          th 金額
+      tbody
+        - item.each do |val|
+          tr
+            td = Category.find(val.category_id).name ||= ""
+            td = val.name
+            td = val.price
+
+        tr style="font-weight: bold;"
+            td colspan=2 style="text-align: rigth;" 合計金額
+            td = item.sum(:price)

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category_id: 1
+  name: MyString
+  price: 1
+  approval: false
+
+two:
+  category_id: 1
+  name: MyString
+  price: 1
+  approval: false
