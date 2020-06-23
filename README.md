@@ -1,4 +1,4 @@
-# ProtectMoneyの仕様メモ 及び Rails開発のメモ
+# SpendingMgmtの仕様メモ 及び Rails開発のメモ
 
 ## 【目的】
 
@@ -59,7 +59,7 @@
 ### プロジェクト作成
 
 ```rails
-rails new ProtectMoney -d postgresql
+rails new SpendingMgmt -d postgresql
 rails new プロジェクト名 -d mysql
 ```
 
@@ -91,12 +91,12 @@ postgresqlの設定
 ```Rails
 【database.ymlを書き換えた後、コンソールで以下を実行】
 createuser user
-createdb ProtectMoney_development
-createdb ProtectMoney_test
-createdb ProtectMoney_production
+createdb SpendingMgmt_development
+createdb SpendingMgmt_test
+createdb SpendingMgmt_production
 
 【ログイン出来る事を確認】
-psql -d ProtectMoney_development
+psql -d SpendingMgmt_development
 ```
 
 モデル(単数形,先頭大文字で宣言。モデルの項目は小文字)
@@ -159,9 +159,9 @@ TRUNCATE TABLE buy_items RESTART IDENTITY;
 
 【データベースの削除】
 dropdb データベース名
-dropdb ProtectMoney_development
-dropdb ProtectMoney_test
-dropdb ProtectMoney_production
+dropdb SpendingMgmt_development
+dropdb SpendingMgmt_test
+dropdb SpendingMgmt_production
 ```
 
 #### html2slimのコマンド(既存のhtmlをslimに変換)  
